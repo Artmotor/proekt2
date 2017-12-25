@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="UTF-8">
+	  <title>"Электронная регистрация на курсах</title>
+	  <meta name="viewport" content="width=700">
+	  <link rel='stylesheet prefetch' href='https://cdn.jsdelivr.net/npm/suggestions-jquery@latest/dist/css/suggestions.min.css'>
+	  <link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+		<form method ="post" action ="http://od37.ru:8984/sandbox/store.xml" type = "application/x-www-form-urlencoded">
+			<section class="container">
+				<p><a href="http://www.iroio.ru/index.aspx"><img src="images/logo_iro.gif" align="left" width="60" height="60"></a>
+				<div id="header"><h1>ЭЛЕКТРОННАЯ РЕГИСТРАЦИЯ НА КУРСАХ ПОВЫШЕНИЯ КВАЛИФИКАЦИИ И ПЕРЕПОДГОТОВКИ</h1></div>				
+				<div class="block_full">
+					<h2>ВЫБЕРИТЕ КУРС ПОВЫШЕНИЯ КВАЛИФИКАЦИИ</h2>
+					<fieldset class="radio">
+						<p><input type="radio" name="kpk" value="kpk1"/>Эффективные приемы подготовки учащихся к государственной итоговой аттестации по русскому языку и литературе. 25.01.2018-22.02.2018</p>
+						<p><input type="radio" name="kpk" selected value="kpk2"/>Инновационные технологии образования в условиях реализации ФГОС в рамках предметной области «Русский язык и литература». 18.01.2018-15.03.2018</p>
+						<input type="radio" name="kpk" value="kpk3"/>Новые подходы к преподаванию русского языка и литературы в условиях реализации «Концепции преподавания русского языка и литературы в Российской Федерации». 13-22.06.2018</p>
+						<p><input type="radio" name="kpk" value="kpk4"/>Методика подготовки к устной части ОГЭ по русскому языку. 18.10.2018-22.11.2018</fieldset>
+					</fieldset>
+				</div>
+				<div class="block_full">
+					<table>
+						<tr>
+							<td width = "50%">
+								<div class="block1" >
+									<h2>ПЕРСОНАЛЬНАЯ ИНФОРМАЦИЯ</h2>
+									<div class="row">
+										<label>Фамилия</label>
+										<input name="first_name"/>
+									</div>
+									<div class="row">
+										<label>Имя</label>
+										<input name="name"/>
+									</div>
+									<div class="row">
+										<label>Отчество</label>
+										<input name="last_name"/>
+									</div>
+									<div class="row">
+										<label>Год рождения</label>
+										<input name="year"/>
+									</div>
+									<div class="radio">
+										<fieldset>
+											<p>Укажите Ваш пол</p>
+											<input value="man" type="radio" name = "sex">мужской</input>
+											<input value="woman" type="radio" name = "sex">женский</input>
+										</fieldset> 
+									</div>
+									<div class="row">
+										<label>Электронная почта</label>
+										<input name="email"/>
+									</div>
+									<div class="row">
+										<label>Телефон</label>
+										<input name="tel"/>
+									</div>
+								</div>
+							</td>
+							<td width = "50%">
+								<div class="block1" >
+									<h2>ИНФОРМАЦИЯ О ВАШЕЙ ПРОФЕССИОНАЛЬНОЙ ДЕЯТЕЛЬНОСТИ</h2>
+									<div class="row">
+											<label>Педагогический стаж</label>
+											<input name="experience"/>
+									</div>
+									<div class="row">
+										<label>Должность</label>
+										<input name="position"/>
+									</div>
+									<div class="row">
+										<label>Год последнего прохождения курсов повышения квалификации (например, 2016)</label>
+										<input name="kpk_year"/>
+									</div>
+									<div class="radio">
+										<fieldset>
+											<p>Категория</p>
+											<input type="radio" name = "category" value="cat1">Высшая</input>
+											<input type="radio" name = "category" selected value="cat2">Первая</input>
+											<input type="radio" name = "category" value="cat3">Соответствие</input>
+											<input type="radio" name = "category" value="cat4">Нет категории</input>
+										</fieldset>
+									</div>
+									<div class="row">
+										<label>Почетное звание</label>
+										<input name="title"/>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="block_full">
+				<h2>ВАША ОРГАНИЗАЦИИЯ</h2>
+					<div class="row">
+						<label>Введите название своей организации (например, приволжск школа). Выберите из выпадающего списка свою организацию. Нажмите ввод</label>
+						<input id="party" name="party" type="text" placeholder="Введите название, ИНН, ОГРН или адрес организации" />
+					</div> 
+					<section class="result">
+						<p id="type"></p>
+							<div class="row" >
+								<label>Краткое наименование</label>
+								<input id="name_short" name = "name_short" readonly />
+							</div>
+						<div class="row"  >
+							<label>Полное наименование</label>
+							<input  rows = "3" id="name_full" rows = "3" readonly />
+						</div>
+						<div class="row">
+							<label>ИНН / КПП</label>
+							<input id="inn_kpp" readonly />
+						</div>
+						<div class="row">
+							<label>Адрес</label>
+							<input id="address" readonly />
+						</div>
+					</section>
+				
+				</div>
+				<div class="row">
+					<input type="submit"/>
+				</div>
+					
+			</section>
+			
+		</form>
+		
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+		<script src='https://cdn.jsdelivr.net/npm/suggestions-jquery@latest/dist/js/jquery.suggestions.min.js'></script>
+		<script src="js/index.js"></script>
+		<div id="carrier">
+		</div>
+		<div id="footer">
+			<p>© kontur32<br /><span style="white-space: nowrap">ИРО Ивановской области Тел.: (123) 456-78-90.</span></p>
+		</div>
+	</body>
+</html>
